@@ -1,0 +1,689 @@
+body {
+  background-color: gray;
+}
+
+.container {
+  position: relative;
+  width: 1800px;
+  margin: auto;
+  height: 65vh;
+  border: 1px solid;
+  padding-top: 100px;
+}
+
+#carousel {
+  width: 600px;
+  position: relative;
+}
+
+.next {
+  position: fixed;
+  left: 150px;
+  bottom: 100px;
+}
+
+.prev {
+  position: fixed;
+  bottom: 100px;
+}
+
+.pics {
+  box-sizing: border-box;
+}
+.pic1,
+.pic2,
+.pic3,
+.pic4,
+.pic5,
+.pic6,
+.pic7,
+.pic8,
+.pic9 {
+  display: block;
+  position: absolute;
+  width: 754px;
+  height: 420px;
+  transition: all 0.6s 0s ease-out;
+}
+
+.pic1 {
+  /* transform: translate(523px, 90px); */
+  transform: translate3d(523px, 90px, -145.052px) rotateX(0deg) rotateY(0deg)
+    rotateZ(0deg) scale3d(1, 1, 1);
+  /* width: 754px;
+  height: 420px; */
+  z-index: 5;
+}
+
+.pic2 {
+  transform: translate(915px, 30px) skewY(7deg) rotateY(160deg) scaleX(0.77)
+    scaleY(0.754);
+  /* transform: translate3d(1020px, 85px, 0px) skewY(7deg) rotateX(0deg)
+    rotateY(160deg) rotateZ(0deg) scale3d(1, 1, 1); */
+  /* transition: all 0.6s; */
+  z-index: 4;
+  /* width: 545px; */
+  /* height: 383px; */
+}
+.pic3 {
+  transform: translate(1098px, -35px) rotateX(0deg) rotateY(160deg)
+    rotateZ(0deg) scaleX(0.908) scaleY(0.665);
+  z-index: 3;
+  /* display: none; */
+  /* width: 643px; */
+  /* height: 279px; */
+}
+.pic4 {
+  transform: translate(958px, -75px) skew(1deg, -5deg) rotateX(0deg)
+    rotateY(160deg) rotateZ(0deg) scaleX(0.6302) scaleY(0.619);
+  /* display: none; */
+  z-index: 2;
+  /* width: 451px; */
+  /* height: 299px; */
+}
+.pic5 {
+  transform: translate(680px, -20px) skew(1deg, -25deg) rotateX(0deg)
+    rotateY(160deg) rotateZ(0deg) scaleX(0.214) scaleY(0.846);
+  /* display: none; */
+  z-index: 1;
+  /* width: 156px; */
+  /* height: 426px; */
+}
+
+.pic6 {
+  transform: translate(355px, -17px) skew(1deg, 25deg) scaleX(0.214)
+    scaleY(0.846);
+  z-index: 1;
+  /* display: none; */
+  /* width: 156px; */
+  /* height: 426px; */
+}
+
+.pic7 {
+  transform: translate(85px, -75px) skew(1deg, 5deg) scaleX(0.5922)
+    scaleY(0.619);
+  /* display: none; */
+  z-index: 2;
+  /* width: 451px; */
+  /* height: 299px; */
+}
+
+.pic8 {
+  transform: translate(-53px, -35px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)
+    scaleX(0.853) scaleY(0.665);
+  /* display: none; */
+  z-index: 3;
+  /* width: 643px; */
+  /* height: 279px; */
+}
+
+.pic9 {
+  transform: translate(120px, 30px) skewY(-6deg) rotateX(0deg) rotateY(0deg)
+  rotateZ(0deg) scaleX(0.723) scaleY(0.7755);
+  /* transform: translate3d(230px, 80px, 0px) skewY(-6deg) rotateX(0deg)
+    rotateY(-160deg) rotateZ(0deg) scale3d(1, 1, 1); */
+  /* display: none; */
+  z-index: 4;
+  /* width: 545px; */
+  /* height: 383px; */
+}
+
+.check {
+  -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(70%, transparent), to(rgba(250, 250, 250, 0.1)));
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+
+
+******************
+
+
+
+// var nextButton = document.querySelector(".next");
+// var prevButton = document.querySelector(".prev");
+// nextButton.addEventListener("click", n);
+// prevButton.addEventListener("click", p);
+
+// function n() {
+//   var elems = document.getElementsByClassName("pics");
+//   var b = elems.item(0).className;
+//   elems.item(0).className = elems.item(1).className;
+//   elems.item(1).className = elems.item(2).className;
+//   elems.item(2).className = elems.item(3).className;
+//   elems.item(3).className = elems.item(4).className;
+//   elems.item(4).className = elems.item(5).className;
+//   elems.item(5).className = elems.item(6).className;
+//   elems.item(6).className = elems.item(7).className;
+//   elems.item(7).className = elems.item(8).className;
+//   elems.item(8).className = b;
+// }
+
+// function p() {
+//   var prevelemt = document.getElementsByClassName("pics");
+//   var a = prevelemt.item(8).className;
+//   prevelemt.item(8).className = prevelemt.item(7).className;
+//   prevelemt.item(7).className = prevelemt.item(6).className;
+//   prevelemt.item(6).className = prevelemt.item(5).className;
+//   prevelemt.item(5).className = prevelemt.item(4).className;
+//   prevelemt.item(4).className = prevelemt.item(3).className;
+//   prevelemt.item(3).className = prevelemt.item(2).className;
+//   prevelemt.item(2).className = prevelemt.item(1).className;
+//   prevelemt.item(1).className = prevelemt.item(0).className;
+//   prevelemt.item(0).className = a;
+// }
+
+// function n() {
+//   var lastClassName = elems[elems.length - 1].className;
+//   for (var i = elems.length - 1; i > 0; i--) {
+//     elems[i].className = elems[i - 1].className;
+//   }
+//   elems[0].className = lastClassName;
+// }
+
+// function p() {
+//   var firstClassName = elems[0].className;
+//   for (var i = 0; i < elems.length - 1; i++) {
+//     elems[i].className = elems[i + 1].className;
+//   }
+//   elems[elems.length - 1].className = firstClassName;
+// }
+
+var nextButton = document.querySelector(".next");
+var prevButton = document.querySelector(".prev");
+
+const slider = document.querySelector(".container");
+const carousel = document.querySelector(".container"),
+  firstImg = document.querySelectorAll("img")[0];
+var elems = document.getElementsByClassName("pics");
+var screenWidth = window.innerWidth || document.documentElement.clientWidth;
+var clickCount = 0;
+var isButtonDisabled = false;
+let isDown = false;
+let startX, x;
+let scrollLeft;
+var step = calculateStep();
+let isDragStart = false,
+  isDragging = false,
+  prevPageX,
+  prevScrollLeft,
+  positionDiff;
+
+window.addEventListener("resize", handleScreenResize);
+window.onload = function () {
+  handleScreenResize();
+  step = calculateStep();
+};
+
+const autoSlide = () => {
+  if (carousel.scrollLeft == carousel.scrollWidth - carousel.clientWidth)
+    return;
+
+  positionDiff = Math.abs(positionDiff);
+  let firstImgWidth = step - 20;
+  let valDifference = firstImgWidth - positionDiff;
+  console.log(clickCount);
+  if (carousel.scrollLeft > prevScrollLeft) {
+    // clickCount++;
+    return n();
+    // return (carousel.scrollLeft +=
+    //   positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff);
+  }
+  p();
+  // carousel.scrollLeft -=
+  //   positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
+  // clickCount--;
+};
+
+const dragStart = (e) => {
+  isDragStart = true;
+  prevPageX = e.pageX || e.touches[0].pageX;
+  prevScrollLeft = carousel.scrollLeft;
+};
+
+const dragging = (e) => {
+  if (!isDragStart) return;
+  e.preventDefault();
+  isDragging = true;
+  carousel.classList.add("dragging");
+
+  // positionDiff = (e.pageX || e.touches[0].pageX) - prevPageX;
+  // carousel.scrollLeft = prevScrollLeft - positionDiff;
+
+  const newX = e.pageX || e.touches[0].pageX;
+  const dragDistance = newX - startX;
+  carousel.scrollLeft = scrollLeft - dragDistance;
+
+  positionDiff = newX - prevPageX;
+
+  if (positionDiff < -step / 4) {
+    n();
+  } else if (positionDiff > step / 4) {
+    p();
+  }
+};
+
+const dragStop = () => {
+  isDragStart = false;
+  carousel.classList.remove("dragging");
+  if (!isDragging) return;
+  isDragging = false;
+  autoSlide();
+};
+
+carousel.addEventListener("mousedown", dragStart);
+carousel.addEventListener("touchstart", dragStart);
+
+carousel.addEventListener("mousemove", dragging);
+carousel.addEventListener("touchmove", dragging);
+
+carousel.addEventListener("mouseup", dragStop);
+carousel.addEventListener("mouseleave", dragStop);
+carousel.addEventListener("touchend", dragStop);
+
+// const end = () => {
+//   isDown = false;
+//   if (startX > x) {
+//     n();
+//   } else {
+//     p();
+//   }
+// };
+
+// const start = (e) => {
+//   isDown = true;
+//   startX = e.pageX || e.touches[0].pageX - slider.offsetLeft;
+//   scrollLeft = slider.scrollLeft;
+// };
+
+// const move = (e) => {
+//   if (!isDown) return;
+
+//   e.preventDefault();
+//    x = e.pageX || e.touches[0].pageX - slider.offsetLeft;
+//   const dist = x - startX;
+
+//   // slider.scrollLeft = scrollLeft - dist;
+//   // if (startX > x) {
+//   //   n();
+//   // } else {
+//   //   p();
+//   // }
+
+//   console.log("Scroll Left:", slider.scrollLeft);
+//   console.log("Start X:", startX);
+//   console.log("Current X:", x);
+//   console.log("Distance:", dist);
+// };
+
+// (() => {
+//   slider.addEventListener("mousedown", start);
+//   slider.addEventListener("touchstart", start);
+
+//   slider.addEventListener("mousemove", move);
+//   slider.addEventListener("touchmove", move);
+
+//   slider.addEventListener("mouseleave", end);
+//   slider.addEventListener("mouseup", end);
+//   slider.addEventListener("touchend", end);
+// })();
+
+function handleScreenResize() {
+  clickCount = 0;
+  if (window.innerWidth < 1200) {
+    screenWidth = window.innerWidth || document.documentElement.clientWidth;
+    updateTransformX();
+    step = calculateStep();
+  } else {
+    for (var i = 0; i < elems.length; i++) {
+      elems[i].style.transform = "";
+      elems[i].style.transitionDuration = "";
+      elems[i].style.zIndex = "";
+      elems[i].style.width = "";
+    }
+  }
+}
+
+function calculateStep() {
+  if (window.innerWidth < 380) {
+    return 280;
+  } else if (window.innerWidth < 768) {
+    return 320;
+  } else if (window.innerWidth < 1020) {
+    return 400;
+  } else {
+    return 500;
+  }
+}
+
+function updateTransformX() {
+  var transformX = 0;
+  for (var i = 0; i < elems.length; i++) {
+    elems[i].style.transitionProperty = "transform";
+    // elems[i].style.transitionDuration = "1s";
+    elems[i].style.transitionTimingFunction = "ease";
+    elems[i].style.transform = `translateX(${transformX}px) `;
+    elems[i].style.width = `${step - 20}px`;
+    transformX += step;
+    // transformX += step + 10;
+  }
+}
+
+nextButton.addEventListener("click", n);
+prevButton.addEventListener("click", p);
+
+function n() {
+  if (window.innerWidth < 1200 && !isButtonDisabled) {
+    isButtonDisabled = true;
+    setTimeout(function () {
+      isButtonDisabled = false;
+    }, 600);
+
+    if (clickCount < elems.length - 2) {
+      for (var i = elems.length - 1; i > 0; i--) {
+        elems[i].style.transform = elems[i - 1].style.transform;
+      }
+      elems[0].style.transform = `translateX(${-step}px)`;
+      clickCount++;
+    }
+  } else if (!isButtonDisabled) {
+    isButtonDisabled = true;
+    setTimeout(function () {
+      isButtonDisabled = false;
+    }, 600);
+    var lastClassName = elems[elems.length - 1].className;
+    for (var i = elems.length - 1; i > 0; i--) {
+      elems[i].className = elems[i - 1].className;
+    }
+    elems[0].className = lastClassName;
+  }
+}
+
+function p() {
+  if (window.innerWidth < 1200 && !isButtonDisabled) {
+    isButtonDisabled = true;
+    setTimeout(function () {
+      isButtonDisabled = false;
+    }, 600);
+
+    if (clickCount > 0) {
+      for (var i = 0; i < elems.length - 1; i++) {
+        elems[i].style.transform = elems[i + 1].style.transform;
+      }
+      elems[8].style.transform = `translateX(${
+        step * (elems.length - clickCount)
+      }px)`;
+
+      if (clickCount === 1) {
+        elems[0].style.transform = `translateX(${0}px)`;
+      }
+      clickCount--;
+    }
+  } else if (!isButtonDisabled) {
+    isButtonDisabled = true;
+    setTimeout(function () {
+      isButtonDisabled = false;
+    }, 600);
+    var firstClassName = elems[0].className;
+    for (var i = 0; i < elems.length - 1; i++) {
+      elems[i].className = elems[i + 1].className;
+    }
+    elems[elems.length - 1].className = firstClassName;
+  }
+}
+
+
+
+*************** 26 sept
+
+
+var nextButton = document.querySelector(".next");
+var prevButton = document.querySelector(".prev");
+
+const slider = document.querySelector(".container");
+const carousel = document.querySelector(".container"),
+  firstImg = document.querySelectorAll("img")[0];
+var elems = document.getElementsByClassName("pics");
+var screenWidth = window.innerWidth || document.documentElement.clientWidth;
+var clickCount = 0;
+var isButtonDisabled = false;
+let isDown = false;
+let startX, x;
+let scrollLeft;
+var step = calculateStep();
+let isDragStart = false,
+  isDragging = false,
+  prevPageX,
+  prevScrollLeft,
+  positionDiff;
+
+window.addEventListener("resize", handleScreenResize);
+window.onload = function () {
+  handleScreenResize();
+  step = calculateStep();
+};
+
+const autoSlide = () => {
+  if (carousel.scrollLeft == carousel.scrollWidth - carousel.clientWidth)
+    return;
+
+  positionDiff = Math.abs(positionDiff);
+  let firstImgWidth = step - 20;
+  let valDifference = firstImgWidth - positionDiff;
+  console.log(clickCount);
+  if (carousel.scrollLeft > prevScrollLeft) {
+    // clickCount++;
+    return n();
+    // return (carousel.scrollLeft +=
+    //   positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff);
+  }
+  p();
+  // carousel.scrollLeft -=
+  //   positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
+  // clickCount--;
+};
+
+const dragStart = (e) => {
+  isDragStart = true;
+  prevPageX = e.pageX || e.touches[0].pageX;
+  prevScrollLeft = carousel.scrollLeft;
+};
+
+const dragging = (e) => {
+  if (!isDragStart) return;
+  e.preventDefault();
+  isDragging = true;
+  carousel.classList.add("dragging");
+
+  // positionDiff = (e.pageX || e.touches[0].pageX) - prevPageX;
+  // carousel.scrollLeft = prevScrollLeft - positionDiff;
+
+  const newX = e.pageX || e.touches[0].pageX;
+  const dragDistance = newX - startX;
+  carousel.scrollLeft = scrollLeft - dragDistance;
+
+  positionDiff = newX - prevPageX;
+
+  if (positionDiff < -step / 4) {
+    return n();
+  } else if (positionDiff > step / 4) {
+    p();
+  }
+};
+
+const dragStop = () => {
+  isDragStart = false;
+  carousel.classList.remove("dragging");
+  if (!isDragging) return;
+  isDragging = false;
+  console.log("came");
+  // autoSlide();
+};
+
+carousel.addEventListener("mousedown", dragStart);
+carousel.addEventListener("touchstart", dragStart);
+
+carousel.addEventListener("mousemove", dragging);
+carousel.addEventListener("touchmove", dragging);
+
+carousel.addEventListener("mouseup", dragStop);
+carousel.addEventListener("mouseleave", dragStop);
+carousel.addEventListener("touchend", dragStop);
+
+// const end = () => {
+//   isDown = false;
+//   if (startX > x) {
+//     n();
+//   } else {
+//     p();
+//   }
+// };
+
+// const start = (e) => {
+//   isDown = true;
+//   startX = e.pageX || e.touches[0].pageX - slider.offsetLeft;
+//   scrollLeft = slider.scrollLeft;
+// };
+
+// const move = (e) => {
+//   if (!isDown) return;
+
+//   e.preventDefault();
+//    x = e.pageX || e.touches[0].pageX - slider.offsetLeft;
+//   const dist = x - startX;
+
+//   // slider.scrollLeft = scrollLeft - dist;
+//   // if (startX > x) {
+//   //   n();
+//   // } else {
+//   //   p();
+//   // }
+
+//   console.log("Scroll Left:", slider.scrollLeft);
+//   console.log("Start X:", startX);
+//   console.log("Current X:", x);
+//   console.log("Distance:", dist);
+// };
+
+// (() => {
+//   slider.addEventListener("mousedown", start);
+//   slider.addEventListener("touchstart", start);
+
+//   slider.addEventListener("mousemove", move);
+//   slider.addEventListener("touchmove", move);
+
+//   slider.addEventListener("mouseleave", end);
+//   slider.addEventListener("mouseup", end);
+//   slider.addEventListener("touchend", end);
+// })();
+
+function handleScreenResize() {
+  clickCount = 0;
+  if (window.innerWidth < 1200) {
+    screenWidth = window.innerWidth || document.documentElement.clientWidth;
+    updateTransformX();
+    step = calculateStep();
+  } else {
+    for (var i = 0; i < elems.length; i++) {
+      elems[i].style.transform = "";
+      elems[i].style.transitionDuration = "";
+      elems[i].style.zIndex = "";
+      elems[i].style.width = "";
+      // elems[i].style.filter = "brightness(100%)";
+    }
+  }
+}
+
+function calculateStep() {
+  if (window.innerWidth < 380) {
+    return 280;
+  } else if (window.innerWidth < 768) {
+    return 320;
+  } else if (window.innerWidth < 1020) {
+    return 400;
+  } else {
+    return 500;
+  }
+}
+
+function updateTransformX() {
+  var transformX = 10;
+  for (var i = 0; i < elems.length; i++) {
+    elems[i].style.transitionProperty = "transform";
+    // elems[i].style.transitionDuration = "1s";
+    elems[i].style.transitionTimingFunction = "ease";
+    elems[i].style.transform = `translateX(${transformX}px) `;
+    elems[i].style.width = `${step - 20}px`;
+    transformX += step;
+    // transformX += step + 10;
+  }
+}
+
+nextButton.addEventListener("click", n);
+prevButton.addEventListener("click", p);
+
+function n() {
+  isDragStart = false;
+  if (window.innerWidth < 1200 && !isButtonDisabled) {
+    isButtonDisabled = true;
+    setTimeout(function () {
+      isButtonDisabled = false;
+    }, 600);
+
+    if (clickCount < elems.length - 2) {
+      for (var i = elems.length - 1; i > 0; i--) {
+        elems[i].style.transform = elems[i - 1].style.transform;
+      }
+      elems[0].style.transform = `translateX(${-step}px)`;
+      clickCount++;
+    }
+  } else if (!isButtonDisabled) {
+    isButtonDisabled = true;
+    setTimeout(function () {
+      isButtonDisabled = false;
+    }, 600);
+    var lastClassName = elems[elems.length - 1].className;
+    for (var i = elems.length - 1; i > 0; i--) {
+      elems[i].className = elems[i - 1].className;
+    }
+    elems[0].className = lastClassName;
+  }
+}
+
+function p() {
+  isDragStart = false;
+
+  if (window.innerWidth < 1200 && !isButtonDisabled) {
+    isButtonDisabled = true;
+    setTimeout(function () {
+      isButtonDisabled = false;
+    }, 600);
+
+    if (clickCount > 0) {
+      for (var i = 0; i < elems.length - 1; i++) {
+        elems[i].style.transform = elems[i + 1].style.transform;
+      }
+      elems[8].style.transform = `translateX(${
+        step * (elems.length - clickCount)
+      }px)`;
+
+      if (clickCount === 1) {
+        elems[0].style.transform = `translateX(${0}px)`;
+      }
+      clickCount--;
+    }
+  } else if (!isButtonDisabled) {
+    isButtonDisabled = true;
+    setTimeout(function () {
+      isButtonDisabled = false;
+    }, 600);
+    var firstClassName = elems[0].className;
+    for (var i = 0; i < elems.length - 1; i++) {
+      elems[i].className = elems[i + 1].className;
+    }
+    elems[elems.length - 1].className = firstClassName;
+  }
+}
